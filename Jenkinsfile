@@ -34,21 +34,10 @@ environment {
         }
         stage('Load Database Schema') {
             steps {
-                sh '''
-                ./venv/bin/python -c "
-        import psycopg2
-        conn = psycopg2.connect(host='host.docker.internal', port='5433', dbname='ecommerce_test_db', user='postgres', password='postgres')
-        conn.autocommit = True
-        cur = conn.cursor()
-        cur.execute(open('db/schema.sql').read())
-        cur.execute(open('db/seed_data.sql').read())
-        cur.close()
-        conn.close()
-        print('Schema and seed data loaded successfully')
-        "
-                '''
+                sh './venv/bin/python db/load_schema.py'
             }
-}
+        }
+
         stage('Run Tests') {
             steps {
                 sh './venv/bin/python -m pytest -v --html=report.html --self-contained-html'
