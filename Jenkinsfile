@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-    environment {
-        DB_HOST = 'localhost'
-        DB_PORT = '5433'
-        DB_NAME = 'ecommerce_test_db'
-        DB_USER = 'postgres'
-        DB_PASSWORD = 'postgres'
-    }
+environment {
+    DB_HOST = 'host.docker.internal'
+    DB_PORT = '5433'
+    DB_NAME = 'ecommerce_test_db'
+    DB_USER = 'postgres'
+    DB_PASSWORD = 'postgres'
+}
 
     stages {
 
