@@ -1,9 +1,6 @@
-version: "3.9"
-
 services:
   postgres:
     image: postgres:16
-    container_name: ecommerce_test_db_container
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -13,4 +10,4 @@ services:
       - "5433:5432"
     volumes:
       - ./db/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
-      - ./db/seed_data.sql:/docker-entrypoint-initdb.d/2_seed_data.sql
+      - ./db/seed_data.sql:/docker-entrypoint-initdb.d/2_seed_data.sql  
