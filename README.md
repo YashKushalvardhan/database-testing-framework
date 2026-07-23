@@ -2,7 +2,7 @@
 
 A Python + Pytest framework for testing a PostgreSQL e-commerce database — schema validation, CRUD operations, referential integrity, relational joins, and query performance. Containerized with Docker and automated via a Jenkins CI/CD pipeline.
 
-Part of a Full Stack QA/SDET portfolio alongside [UI automation](#), [API automation](#), and [performance testing](#) projects.
+Part of a Full Stack QA/SDET portfolio alongside [Playwright automation](https://github.com/YashKushalvardhan/playwright-automation-framework), [API automation](https://github.com/YashKushalvardhan/gorest-api-automation-framework), and [performance testing](https://github.com/YashKushalvardhan/petstore-jmeter-performance-testing) projects.
 
 ---
 
@@ -114,7 +114,7 @@ pytest -v --html=report.html --self-contained-html
 Jenkins pipeline (runs in Docker, DooD setup): checkout → spin up a fresh Postgres container → install dependencies → load schema over the network → run tests → publish HTML report → tear down container.
 
 ![Jenkins Pipeline](screenshots/jenkins_pipeline.png)
-![Test Run](screenshots/pytest_run.png)
+![Test Run](screenshots/runpytest.png)
 
 ---
 
